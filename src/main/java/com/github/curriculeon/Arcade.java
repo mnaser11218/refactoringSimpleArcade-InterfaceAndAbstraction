@@ -5,6 +5,7 @@ import com.github.curriculeon.arcade.ArcadeAccountManager;
 import com.github.curriculeon.arcade.GameInterface;
 import com.github.curriculeon.arcade.PlayerInterface;
 import com.github.curriculeon.arcade.numberguess.NumberGuessGame;
+import com.github.curriculeon.arcade.numberguess.NumberGuessInterface;
 import com.github.curriculeon.arcade.numberguess.NumberGuessPlayer;
 import com.github.curriculeon.arcade.slots.SlotsGame;
 import com.github.curriculeon.arcade.slots.SlotsPlayer;
@@ -76,7 +77,7 @@ public class Arcade implements Runnable {
     }
 
     private void play(Object gameObject, Object playerObject) {
-        GameInterface game = (GameInterface)gameObject;
+        NumberGuessInterface game = (NumberGuessInterface) gameObject;
         PlayerInterface player = (PlayerInterface)playerObject;
         game.add(player);
         game.run();
