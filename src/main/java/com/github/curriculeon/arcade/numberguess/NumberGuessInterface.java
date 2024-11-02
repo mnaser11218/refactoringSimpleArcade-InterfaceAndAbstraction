@@ -37,9 +37,6 @@ public interface NumberGuessInterface {
         return true;
     }
 
-
-
-
     default void evaluatePlayer(PlayerInterface playerInterface) {
         setRandomNumber();
         Integer numberGuessed= playerInterface.play();
@@ -53,28 +50,14 @@ public interface NumberGuessInterface {
         endGame();
     }
 
-
-
-    /**
-     * adds a player to the game
-     * @param player the player to be removed from the game
-     */
     default void add(PlayerInterface player){
         getPlayerList().add(player);
     };
 
-
-    /**
-     * removes a player from the game
-     * @param player the player to be removed from the game
-     */
     default void remove(PlayerInterface player){
         getPlayerList().remove(player);
     };
 
-    /**
-     * specifies how the game will run
-     */
     default void run(){
         do{
             for(PlayerInterface playerInterface : getPlayerList())
